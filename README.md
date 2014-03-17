@@ -1,4 +1,4 @@
 JKNSStringAdditions
 ===================
 
-A NSString Category
+A NSString Category with usefull day to day methods.
