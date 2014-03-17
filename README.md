@@ -1,0 +1,4 @@
+JKNSStringAdditions
+===================
+
+A NSString Category
