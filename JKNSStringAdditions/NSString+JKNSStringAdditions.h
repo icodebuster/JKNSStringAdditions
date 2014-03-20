@@ -10,4 +10,15 @@
 
 @interface NSString (JKNSStringAdditions)
 
+
+// Function to check if the string is blank.
+- (BOOL)isBlank;
+
+// Function to remove the blank spaces.
+- (NSString *)stringWithoutBlanks;
+
+// Function to check is a string contains a sub string.
+- (BOOL)contains:(NSString *)string;
+
+
 @end

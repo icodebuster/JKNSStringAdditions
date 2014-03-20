@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "NSString+JKNSStringAdditions.h"
 
 @interface ViewController ()
 
@@ -17,7 +18,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+
+    NSString *blankString = @"  ";
+    NSString *someString = @"     Some String     ";
+    
+    // Blank String Sample
+    NSLog(@"String is blank = %@", [blankString isBlank] ? @"Yes" : @"No");
+    NSLog(@"String is blank = %@", [someString isBlank] ? @"Yes" : @"No");
+    
+    // String Without Blanks
+    NSLog(@"String without blanks = %@", [someString stringWithoutBlanks]);
+    
+    // String Contains Checking
+    NSLog(@"String Contains = %@", [someString contains:@"Some"] ? @"Yes" : @"No");
 }
 
 - (void)didReceiveMemoryWarning
