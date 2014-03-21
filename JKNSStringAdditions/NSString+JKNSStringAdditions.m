@@ -29,5 +29,10 @@
     return (range.location != NSNotFound);
 }
 
+// Function to split a string by string.
+- (NSArray *)splitBy:(NSString *)splitString
+{
+    return [self componentsSeparatedByString:splitString];
+}
 
 @end

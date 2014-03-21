@@ -21,6 +21,7 @@
 
     NSString *blankString = @"  ";
     NSString *someString = @"     Some String     ";
+    NSString *lineString = @"my.name.is.jobin";
     
     // Blank String Sample
     NSLog(@"String is blank = %@", [blankString isBlank] ? @"Yes" : @"No");
@@ -31,6 +32,9 @@
     
     // String Contains Checking
     NSLog(@"String Contains = %@", [someString contains:@"Some"] ? @"Yes" : @"No");
+    
+    // Split String
+    NSLog(@"String Contains %@", [lineString splitBy:@"."]);
 }
 
 - (void)didReceiveMemoryWarning

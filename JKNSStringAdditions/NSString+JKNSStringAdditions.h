@@ -20,5 +20,8 @@
 // Function to check is a string contains a sub string.
 - (BOOL)contains:(NSString *)string;
 
+// Function to split a string by string.
+- (NSArray *)splitBy:(NSString *)splitString;
+
 
 @end
