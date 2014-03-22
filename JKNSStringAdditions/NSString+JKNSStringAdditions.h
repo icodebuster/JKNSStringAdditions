@@ -23,5 +23,8 @@
 // Function to split a string by string.
 - (NSArray *)splitBy:(NSString *)splitString;
 
+// Function to compute md5 hash of the string.
+- (NSString *)md5;
+
 
 @end

@@ -22,6 +22,7 @@
     NSString *blankString = @"  ";
     NSString *someString = @"     Some String     ";
     NSString *lineString = @"my.name.is.jobin";
+    NSString *stringToHash = @"Sample String";
     
     // Blank String Sample
     NSLog(@"String is blank = %@", [blankString isBlank] ? @"Yes" : @"No");
@@ -34,7 +35,11 @@
     NSLog(@"String Contains = %@", [someString contains:@"Some"] ? @"Yes" : @"No");
     
     // Split String
-    NSLog(@"String Contains %@", [lineString splitBy:@"."]);
+    NSLog(@"String Contains = %@", [lineString splitBy:@"."]);
+    
+    // MD5 Hash
+    NSLog(@"MD5 Hash = %@", [stringToHash md5]);
+    
 }
 
 - (void)didReceiveMemoryWarning
