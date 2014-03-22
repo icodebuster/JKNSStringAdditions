@@ -26,5 +26,8 @@
 // Function to compute md5 hash of the string.
 - (NSString *)md5;
 
+// Function to compute sha1 hash of the string.
+- (NSString *)sha1;
+
 
 @end

@@ -40,6 +40,9 @@
     // MD5 Hash
     NSLog(@"MD5 Hash = %@", [stringToHash md5]);
     
+    // SHA1 Hash
+    NSLog(@"SHA1 Hash = %@", [stringToHash sha1]);
+    
 }
 
 - (void)didReceiveMemoryWarning
