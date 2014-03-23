@@ -80,5 +80,20 @@
     return sha256String;
 }
 
+// Function to compute sha512 hash of the string.
+- (NSString *)sha512
+{
+    NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
+    uint8_t digest[CC_SHA512_DIGEST_LENGTH];
+    CC_SHA512(data.bytes, data.length, digest);
+    NSMutableString *sha512String = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
+    
+    for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++) {
+        [sha512String appendFormat:@"%02x", digest[i]];
+    }
+    
+    return sha512String;
+}
+
 
 @end

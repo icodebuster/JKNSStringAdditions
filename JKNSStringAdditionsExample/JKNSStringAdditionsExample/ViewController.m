@@ -45,7 +45,9 @@
     
     // SHA256 Hash
     NSLog(@"SHA256 Hash = %@", [stringToHash sha256]);
-    
+ 
+    // SHA512 Hash
+    NSLog(@"SHA512 Hash = %@", [stringToHash sha512]);
     
 }
 
