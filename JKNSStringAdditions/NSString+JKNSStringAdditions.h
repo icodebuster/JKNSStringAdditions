@@ -29,5 +29,8 @@
 // Function to compute sha1 hash of the string.
 - (NSString *)sha1;
 
+// Function to compute sha256 hash of the string.
+- (NSString *)sha256;
+
 
 @end

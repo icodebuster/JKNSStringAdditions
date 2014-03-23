@@ -43,6 +43,10 @@
     // SHA1 Hash
     NSLog(@"SHA1 Hash = %@", [stringToHash sha1]);
     
+    // SHA256 Hash
+    NSLog(@"SHA256 Hash = %@", [stringToHash sha256]);
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
