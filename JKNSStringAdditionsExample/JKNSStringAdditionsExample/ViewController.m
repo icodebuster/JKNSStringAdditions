@@ -24,6 +24,7 @@
     NSString *lineString = @"my.name.is.jobin";
     NSString *stringToHash = @"Sample String";
     
+    
     // Blank String Sample
     NSLog(@"String is blank = %@", [blankString isBlank] ? @"Yes" : @"No");
     NSLog(@"String is blank = %@", [someString isBlank] ? @"Yes" : @"No");
@@ -48,6 +49,13 @@
  
     // SHA512 Hash
     NSLog(@"SHA512 Hash = %@", [stringToHash sha512]);
+    
+    
+    // Lower Case Check
+    NSString *lowerCaseString = @"lowercase";
+    
+    NSLog(@"String is lower case = %@", [lowerCaseString isAllLowerCase] ? @"Yes" : @"No");
+    NSLog(@"String is lower case = %@", [stringToHash isAllLowerCase] ? @"Yes" : @"No");
     
 }
 

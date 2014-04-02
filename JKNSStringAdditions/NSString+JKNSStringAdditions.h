@@ -23,6 +23,12 @@
 // Function to split a string by string.
 - (NSArray *)splitBy:(NSString *)splitString;
 
+// Function to check if the string is all lower case.
+- (BOOL)isAllLowerCase;
+
+
+#pragma mark - String Hashes Methods
+
 // Function to compute md5 hash of the string.
 - (NSString *)md5;
 

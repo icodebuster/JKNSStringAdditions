@@ -9,23 +9,32 @@
 #import "NSString+JKNSStringAdditions.h"
 #import <CommonCrypto/CommonDigest.h>
 
+enum CASE_TYPE {
+    LOWER_CASE,
+    UPPER_CASE
+} CaseType;
+
+
 @implementation NSString (JKNSStringAdditions)
 
 
 // Function to check if the string is blank.
-- (BOOL)isBlank {
+- (BOOL)isBlank
+{
     if([[self stringWithoutBlanks] isEqualToString:@""])
         return YES;
     return NO;
 }
 
 // Function to remove the blank spaces.
-- (NSString *)stringWithoutBlanks {
+- (NSString *)stringWithoutBlanks
+{
     return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
 }
 
 // Function to check is a string contains a sub string.
-- (BOOL)contains:(NSString *)string {
+- (BOOL)contains:(NSString *)string
+{
     NSRange range = [self rangeOfString:string];
     return (range.location != NSNotFound);
 }
@@ -35,6 +44,29 @@
 {
     return [self componentsSeparatedByString:splitString];
 }
+
+// Function to check if the string is all lower case.
+- (BOOL)isAllLowerCase
+{
+    return [self isBlank] ? NO : ([self rangeOfCharacterFromSet:[self caseCharacterSet:LOWER_CASE]].location == NSNotFound);
+}
+
+- (NSCharacterSet *)caseCharacterSet:(enum CASE_TYPE)caseType
+{
+    switch (CaseType) {
+        case LOWER_CASE: {
+            return [NSCharacterSet.lowercaseLetterCharacterSet invertedSet];
+            break;
+        }
+        case UPPER_CASE : {
+            return [NSCharacterSet.uppercaseLetterCharacterSet invertedSet];
+            break;
+        }
+    }
+}
+
+
+#pragma mark - String Hashes Methods
 
 // Function to compute md5 hash of the string.
 - (NSString *)md5
