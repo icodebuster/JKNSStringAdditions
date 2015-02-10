@@ -65,6 +65,13 @@ enum CASE_TYPE {
     }
 }
 
+// To validate email address.
+- (BOOL)isEmailValid {
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:self];
+}
+
 
 #pragma mark - String Hashes Methods
 
@@ -73,7 +80,7 @@ enum CASE_TYPE {
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(data.bytes, data.length, digest);
+    CC_MD5(data.bytes, (unsigned int)data.length, digest);
     NSMutableString *md5String = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
     
     for (int i = 0; i < CC_MD5_DIGEST_LENGTH; i++) {
@@ -87,7 +94,7 @@ enum CASE_TYPE {
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA1_DIGEST_LENGTH];
-    CC_SHA1(data.bytes, data.length, digest);
+    CC_SHA1(data.bytes, (unsigned int)data.length, digest);
     NSMutableString *sha1String = [NSMutableString stringWithCapacity:CC_SHA1_DIGEST_LENGTH * 2];
     
     for (int i = 0; i < CC_SHA1_DIGEST_LENGTH; i++) {
@@ -102,7 +109,7 @@ enum CASE_TYPE {
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA256_DIGEST_LENGTH];
-    CC_SHA256(data.bytes, data.length, digest);
+    CC_SHA256(data.bytes, (unsigned int)data.length, digest);
     NSMutableString *sha256String = [NSMutableString stringWithCapacity:CC_SHA256_DIGEST_LENGTH * 2];
     
     for (int i = 0; i < CC_SHA256_DIGEST_LENGTH; i++) {
@@ -117,7 +124,7 @@ enum CASE_TYPE {
 {
     NSData *data = [self dataUsingEncoding:NSUTF8StringEncoding];
     uint8_t digest[CC_SHA512_DIGEST_LENGTH];
-    CC_SHA512(data.bytes, data.length, digest);
+    CC_SHA512(data.bytes, (unsigned int)data.length, digest);
     NSMutableString *sha512String = [NSMutableString stringWithCapacity:CC_SHA512_DIGEST_LENGTH * 2];
     
     for (int i = 0; i < CC_SHA512_DIGEST_LENGTH; i++) {

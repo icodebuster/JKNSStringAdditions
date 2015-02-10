@@ -26,6 +26,8 @@
 // Function to check if the string is all lower case.
 - (BOOL)isAllLowerCase;
 
+// To validate email address.
+- (BOOL)isEmailValid;
 
 #pragma mark - String Hashes Methods
 
